@@ -4,6 +4,10 @@
 
 const helpers = require('./helpers');
 
+test('Zero padding', () => {
+    expect(helpers.zeroPad(1)).toBe('01');
+});
+
 test('Date to timestamp', () => {
     expect(helpers.dateToTimestamp('2018-01-01 12:00')).toBe(1514804400000);
     expect(helpers.dateToTimestamp('garbage')).toBeFalsy();
