@@ -11,7 +11,7 @@ function dateToTimestamp(dateTime) {
 }
 
 function timestampToDate(timestamp) {
-    if(timestamp < 0 || typeof timestamp !== 'number') {
+    if (timestamp < 0 || typeof timestamp !== 'number') {
         return false;
     }
     const time = new Date(timestamp);
@@ -26,7 +26,9 @@ function timestampToDate(timestamp) {
 /**
  * Converts work days (8 hours a day) as it was 24 hrs
  */
-function expandWorhoursToNormalTime() { }
+function expandWorkHoursToNormalTime(turnaroundTime) {
+
+}
 
 function getWeekendCount(turnaroundTime) { }
 
@@ -36,7 +38,7 @@ module.exports = {
     zeroPad,
     dateToTimestamp,
     timestampToDate,
-    expandWorkdayToNormalTime,
+    expandWorkHoursToNormalTime,
     getWeekendCount,
     getWeekStartTimestamp
 }

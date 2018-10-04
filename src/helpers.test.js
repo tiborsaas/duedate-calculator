@@ -21,8 +21,8 @@ test('Timestamp to date', () => {
 });
 
 test('Calculate duration day units', () => {
-    expect(helpers.expandWorhoursToNormalTime(8)).toBe(MILLISECONDS_IN_DAY);
-    expect(helpers.expandWorhoursToNormalTime(4)).toBe(MILLISECONDS_IN_DAY/2);
-    expect(helpers.expandWorhoursToNormalTime(16)).toBe(MILLISECONDS_IN_DAY*2);
+    expect(helpers.expandWorkHoursToNormalTime(8)).toBe(MILLISECONDS_IN_DAY);
+    expect(helpers.expandWorkHoursToNormalTime(4)).toBe(MILLISECONDS_IN_DAY/2);
+    expect(helpers.expandWorkHoursToNormalTime(16)).toBe(MILLISECONDS_IN_DAY*2);
 });
 
