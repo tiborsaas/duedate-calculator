@@ -1,6 +1,6 @@
 /**
  * Epam homework assignment
  */
-function getDueDate(dateCreated, turnaroundTime) { }
+function dueDateCalculator(dateCreated, turnaroundTime) { }
 
-module.export = getDueDate;
+module.exports = dueDateCalculator;
