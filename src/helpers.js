@@ -23,7 +23,10 @@ function timestampToDate(timestamp) {
     return `${year}-${month}-${day} ${hour}:${second}`;
 }
 
-function getDurationInWorkDayUnits() { }
+/**
+ * Converts work days (8 hours a day) as it was 24 hrs
+ */
+function expandWorhoursToNormalTime() { }
 
 function getWeekendCount(turnaroundTime) { }
 
@@ -33,7 +36,7 @@ module.exports = {
     zeroPad,
     dateToTimestamp,
     timestampToDate,
-    getDurationInWorkDayUnits,
+    expandWorkdayToNormalTime,
     getWeekendCount,
     getWeekStartTimestamp
 }
