@@ -3,6 +3,7 @@
  */
 
 const helpers = require('./helpers');
+const MILLISECONDS_IN_DAY = 60*60*24*1000
 
 test('Zero padding', () => {
     expect(helpers.zeroPad(1)).toBe('01');
@@ -18,3 +19,10 @@ test('Timestamp to date', () => {
     expect(helpers.timestampToDate(-1248710)).toBeFalsy();
     expect(helpers.timestampToDate('garbage')).toBeFalsy();
 });
+
+test('Calculate duration day units', () => {
+    expect(helpers.expandWorhoursToNormalTime(8)).toBe(MILLISECONDS_IN_DAY);
+    expect(helpers.expandWorhoursToNormalTime(4)).toBe(MILLISECONDS_IN_DAY/2);
+    expect(helpers.expandWorhoursToNormalTime(16)).toBe(MILLISECONDS_IN_DAY*2);
+});
+
