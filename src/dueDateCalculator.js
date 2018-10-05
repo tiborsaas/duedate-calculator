@@ -4,11 +4,14 @@
 function dueDateCalculator(dateCreated, turnaroundTime) {
     // solution plan:
 
-    // convert issue creation to ts
-    // get day units from diffrence of turnaroundTime
-    // get due date by multiplying diff and seconds in a day
-    // get number of weekends in given timeframe, add that to end date timestamp
-    // convert timestamp back to datestring
+    // the program needs to decrease turnaroundTime to zero:
+    //
+    // start counting from the dateCreated
+    //  - if we are between busicness hours
+    //  - if we are on workdays
+    //      - decrease turnaround time
+    //  - otherwise keep iterating in time
+
 }
 
 module.exports = dueDateCalculator;
