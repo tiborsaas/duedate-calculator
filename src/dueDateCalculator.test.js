@@ -4,9 +4,9 @@
 
 const dueDateCalculator = require('./dueDateCalculator');
 
-xtest('Main calculator: trash inputs', () => {
-    expect(dueDateCalculator('2018-10-04T12:00:00.000Z', 0)).toThrow('The turnaround time should be larger than zero');
-    expect(dueDateCalculator('bamboozle', 0)).toThrow('Issue creation date is invalid: bamboozle');
+test('Main calculator: trash inputs', () => {
+    expect(() => dueDateCalculator('2018-10-04T12:00:00.000Z', 0)).toThrow(TypeError);
+    expect(() => dueDateCalculator('bamboozle', 0)).toThrow(TypeError);
 });
 
 test('Main calculator: same week', () => {
