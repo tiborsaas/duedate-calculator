@@ -1,7 +1,6 @@
 /**
- * Helpers for duedate calculator
+ * Helper functions for duedate calculator
  */
-const MILLISECONDS_IN_DAY = 60 * 60 * 24 * 1000
 
 function zeroPad(number) {
     const numAsString = number.toString();
