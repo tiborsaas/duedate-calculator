@@ -26,9 +26,9 @@ function timestampToDate(timestamp) {
     const year = time.getFullYear();
     const month = zeroPad(time.getMonth() + 1);
     const day = zeroPad(time.getDate());
-    const hour = zeroPad(time.getHours());
-    const second = zeroPad(time.getSeconds());
-    return `${year}-${month}-${day} ${hour}:${second}`;
+    const hour = zeroPad(time.getUTCHours());
+    const minutes = zeroPad(time.getMinutes());
+    return `${year}-${month}-${day} ${hour}:${minutes}`;
 }
 
 function getElapsedWorkHourInDay(timestamp) {
