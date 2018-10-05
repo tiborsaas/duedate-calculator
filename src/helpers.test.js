@@ -20,9 +20,12 @@ test('Timestamp to date', () => {
     expect(helpers.timestampToDate('garbage')).toBeFalsy();
 });
 
-test('Calculate duration day units', () => {
-    expect(helpers.expandWorkHoursToNormalTime(8)).toBe(MILLISECONDS_IN_DAY);
-    expect(helpers.expandWorkHoursToNormalTime(4)).toBe(MILLISECONDS_IN_DAY/2);
-    expect(helpers.expandWorkHoursToNormalTime(16)).toBe(MILLISECONDS_IN_DAY*2);
+test('Elapsed hours in day', () => {
+    expect(helpers.getElapsedWorkHourInDay(1514804400000)).toBe(3);
+    expect(helpers.getElapsedWorkHourInDay(1539500400000)).toBe(0);
 });
 
+test('Work hours elapsed in week', () => {
+    expect(helpers.workHoursElapsedInWeek(1539068400000)).toBe(8);
+    expect(helpers.workHoursElapsedInWeek(1539082800000)).toBe(12);
+});
