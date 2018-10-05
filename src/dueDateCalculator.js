@@ -3,6 +3,8 @@ const dateLib = require('./helpers');
 const WORK_START_TIME = 9;
 const WORK_END_TIME = 17;
 const WEEKENDS = [0, 6];
+const SECONDS_IN_HOUR = 60;
+const MILLISECONDS_IN_HOUR = 60000;
 
 /**
  * Calculate a future event date based on time allocated work time
@@ -18,7 +20,7 @@ function dueDateCalculator(dateCreated, turnaroundTime) {
         throw new TypeError('Issue creation date is invalid: ' + dateCreated);
     }
 
-    let remainingTime = turnaroundTime * 60;
+    let remainingTime = turnaroundTime * SECONDS_IN_HOUR;
 
     while (remainingTime > 0) {
         const hour = timeline.getUTCHours();
@@ -27,7 +29,7 @@ function dueDateCalculator(dateCreated, turnaroundTime) {
         if (hour >= WORK_START_TIME && hour < WORK_END_TIME && !WEEKENDS.includes(day)) {
             remainingTime--;
         }
-        timeline.setTime(timeline.getTime() + 1000 * 60);
+        timeline.setTime(timeline.getTime() + MILLISECONDS_IN_HOUR);
     }
     return dateLib.timestampToDate(timeline.getTime());
 }
